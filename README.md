@@ -9,6 +9,7 @@ This todo app allows user to add new todo, remove todo, mark completed todo, vie
 5. Jest, Enzyme - Functipnal, Component and Snapshot based testing
 
 Step 1: npm install
+
 Step 2: npm run start
 
 ## Testing
