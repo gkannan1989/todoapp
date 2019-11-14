@@ -1,0 +1,29 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "This todo app allows user to add new todo, remove todo, mark completed todo, view todos and interactive UI with Material UI ",
+  "main": "src/index.js",
+  "dependencies": {
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "latest",
+    "@material-ui/styles": "^4.6.0",
+    "enzyme": "3.8.0",
+    "enzyme-adapter-react-16": "1.9.1",
+    "react": "16.8.0",
+    "react-dom": "16.8.0",
+    "react-scripts": "2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
