@@ -29,7 +29,7 @@ body {
 } 
 .MuiFab-root {
   height: .5em !important;
-    width: 2.5em !important;
+  width: 2.5em !important;
 }
 .MuiGridListTileBar-rootSubtitle {
   height: 100% !important;
@@ -84,12 +84,6 @@ body {
   box-shadow: none !important;
   padding-top: 16px;
   /* padding: 16px;  */
-}
-@media only screen and (min-width: 1200px) {
-  .wrapper { 
-    padding-left: 3em;
-    padding-right: 3em;
-  }
 }
 .userImg {
   height: 3em;
