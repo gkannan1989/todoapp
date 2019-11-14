@@ -12,11 +12,11 @@
     "react": "16.8.0",
     "react-dom": "16.8.0",
     "react-scripts": "2.0.3"
-  },
+  }, 
   "devDependencies": {},
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts --max_old_space_size=4096 start",
+    "build": "react-scripts --max_old_space_size=4096 build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
