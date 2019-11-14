@@ -10,7 +10,7 @@ This todo app allows user to add new todo, remove todo, mark completed todo, vie
 
 Demo - https://app-todo-list-items.herokuapp.com/
  
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/5a25f048cb644cd0bda2b4a07d9d2272" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<a href="https://www.loom.com/share/5a25f048cb644cd0bda2b4a07d9d2272"> <p>React App - Watch Video</p> <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/5a25f048cb644cd0bda2b4a07d9d2272-with-play.gif"> </a>
 
 <img src="https://i.ibb.co/Wc0nTXR/desktop-todo.jpg"/>
 <img src="https://i.ibb.co/m8jwghW/desktop.jpg"/>
