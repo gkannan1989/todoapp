@@ -1,4 +1,4 @@
-# Interactive React Todo App
+# Interactive React Responsive Todo App
 
 This todo app allows user to add new todo, remove todo, mark completed todo, view todos and interactive UI with Material UI 
 
@@ -7,6 +7,8 @@ This todo app allows user to add new todo, remove todo, mark completed todo, vie
 3. Material UI 
 4. Custom hooks(useEffect) for usePersistedContext
 5. Jest, Enzyme - Functional, Component and Snapshot based testing
+
+Demo - https://app-todo-list-items.herokuapp.com/
 
 Step 1: npm install
 
