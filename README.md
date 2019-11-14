@@ -12,11 +12,10 @@ Demo - https://app-todo-list-items.herokuapp.com/
 
 
 
-
-<img src="https://i.ibb.co/m8jwghW/desktop.jpg"/>
 <img src="https://i.ibb.co/Wc0nTXR/desktop-todo.jpg"/>
-<img src="https://i.ibb.co/rHJF0Xq/mobile-new-todo.jpg"/>
+<img src="https://i.ibb.co/m8jwghW/desktop.jpg"/>
 <img src="https://i.ibb.co/1qg5CNZ/mobile-ui.jpg"/>
+<img src="https://i.ibb.co/rHJF0Xq/mobile-new-todo.jpg"/>
 
 Step 1: npm install
 
