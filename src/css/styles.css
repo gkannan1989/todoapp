@@ -1,8 +1,7 @@
 html,
-body {
-  margin: 0;
-  font-family: 'Darwin-Light !important';
-  padding: 0; 
+body { 
+  font-family: 'Darwin-Light !important'; 
+  margin: 0.8px;
 }  
 @font-face {font-family: "Darwin-Bold";
   src: url("../assets/fonts/eot/Darwin-Bold.eot"); /* IE9*/
@@ -29,7 +28,7 @@ body {
 } 
 .MuiFab-root {
   height: .5em !important;
-  width: 2.5em !important;
+    width: 2.5em !important;
 }
 .MuiGridListTileBar-rootSubtitle {
   height: 100% !important;
@@ -66,8 +65,7 @@ body {
 } 
 .addToDoBtn {
   line-height: 4em !important;
-  margin-left: 1em !important;
-  height: 15em !important;
+  margin-left: 1em !important; 
 }
 .addToDo {
   margin-top: 1em !important;
