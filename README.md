@@ -9,9 +9,11 @@ This todo app allows user to add new todo, remove todo, mark completed todo, vie
 5. Jest, Enzyme - Functional, Component and Snapshot based testing
 
 Demo - https://app-todo-list-items.herokuapp.com/
- 
+
+<a href="https://www.loom.com/share/8d84a1ce145342e4890feb8a29334e32"> <p>Todo App - Watch Video</p> <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/8d84a1ce145342e4890feb8a29334e32-with-play.gif"> </a>
+
 <img src="https://i.ibb.co/Wc0nTXR/desktop-todo.jpg"/> 
-<img src="https://i.ibb.co/w7CRrsQ/mobile-new.jpg"/> 
+<img src="https://i.ibb.co/1qg5CNZ/mobile-ui.jpg"/> 
 
 Step 1: npm install
 
