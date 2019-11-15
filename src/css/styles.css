@@ -2,8 +2,8 @@ html,
 body { 
   font-family: 'Darwin-Light !important'; 
   margin: 0px; 
-  padding: 0px;
   height: 100%;
+  padding: 0px;
 }   
 #root {
   height: 100%;
@@ -122,4 +122,8 @@ ul.MuiGridList-root {
 }
 .MuiButton-outlinedSecondary:hover {
   background-color: rgba(0, 0, 0, 0.08) !important;
+} 
+.MuiSnackbarContent-action { 
+  padding-left: 0px !important;
+  width: 41px !important;
 } 

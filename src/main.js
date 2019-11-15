@@ -6,6 +6,7 @@ import TodoList from "./components/TodoList";
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/es/styles';
 import Store from '../src/store/context' 
 import {constants} from './actions/constants'
+import Notification from '../src/components/Notification'; 
 
 const onTodoClick = (initialValue = false) => {
   const [isOpen, triggerOpen] = useState(initialValue); 
@@ -24,21 +25,31 @@ const TodoApp = memo(() => {
     }
   }); 
   const [todo, setTodo] = useState("");
+  const [message, notifyMessage] = useState("");
 
   const handleTodoChange = (e) => {
     setTodo(e.target.value);
   }
   const removeTodo = (idx) => {
+    notifyMessage({"type": Constants.SUCCESS, "msg": Constants.TODO_REMOVED_MESSAGE}) 
     dispatch({ type: constants.DELETE, payload: idx });
   }
   const selectTodo = (idx) => {
+    notifyMessage({"type": Constants.INFO, "msg": Constants.TODO_MARK_MESSAGE}) 
     dispatch({ type: constants.COMPLETE, payload: idx });
   }
   const handleTodoAdd = () => {
-    dispatch({ type: constants.ADD_TODO, payload: todo });
-    setTodo("");
-    openTodo(false);
+    if(todo != "") {
+      dispatch({ type: constants.ADD_TODO, payload: todo });
+      setTodo("");
+      openTodo(false);
+      notifyMessage({"type": Constants.SUCCESS, "msg": Constants.TODO_SUCCESS_MESSAGE})
+    }
+    else {
+      notifyMessage({"type": Constants.ERROR, "msg": Constants.ERROR_MESSAGE})
+    } 
   }
+  
   const user =  {name: constants.USER_NAME, todo: constants.TODO_TXT}
   const banner =  {title: constants.BANNER_TITLE, subTitle: constants.BANNER_SUB_TITLE}
   
@@ -49,6 +60,7 @@ const TodoApp = memo(() => {
     }
     return false;
   }
+   
   return (
   <div className={'wrapper'}>
    <MuiThemeProvider theme={theme}>
@@ -67,6 +79,15 @@ const TodoApp = memo(() => {
         isOpen={isOpen}
         onInputKeyPress={event => handleToAddKeyPress(event)}
       /> 
+      {message ? 
+        <Notification
+          variant={message && message.type} 
+          onClose={() => notifyMessage("")}
+          message={message.msg}
+        /> : 
+        ''
+      }
+      
      </Layout>
      </MuiThemeProvider>
   </div>
