@@ -127,3 +127,8 @@ ul.MuiGridList-root {
   padding-left: 0px !important;
   width: 41px !important;
 } 
+@media only screen and (min-width: 600px) {
+  .MuiGrid-container {
+      height: 100%;
+  }
+}
