@@ -2,7 +2,16 @@ html,
 body { 
   font-family: 'Darwin-Light !important'; 
   margin: 0px 0.8px 0px; 
+  height: 100%;
 }  
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 0px
+  }
+}
+#root {
+  height: 100%;
+}
 @font-face {font-family: "Darwin-Bold";
   src: url("../assets/fonts/eot/Darwin-Bold.eot"); /* IE9*/
   src: url("../assets/fonts/eot/Darwin-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
@@ -98,4 +107,10 @@ body {
 } 
 .addBtn {
   min-width: auto;
+} 
+.wrapper > .MuiPaper-rounded {
+  height: 100%;
+}
+.wrapper {
+  height: 97%;
 }

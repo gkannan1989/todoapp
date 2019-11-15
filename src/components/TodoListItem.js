@@ -21,6 +21,14 @@ const GreenCheckbox = withStyles({
   checked: {},
 })(props => <Checkbox color="default" {...props} />); 
 
+const detectMobile = () => {
+  if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 const TodoListItem = memo((props) => {
   const [show, showIcon] = useState(false); 
   return (
@@ -36,7 +44,7 @@ const TodoListItem = memo((props) => {
         /> 
       <ListItemText className={props.checked ? 'strikeThrough' : ''} primary={props.text} onMouseLeave={() => showIcon(false)} onMouseEnter={() => showIcon(true)} />
       {
-        show ? (<IconButton  onMouseEnter={() => showIcon(true)} onMouseLeave={() => showIcon(false)}  color='primary' aria-label="Delete Todo" onClick={props.onButtonClick} >
+        (detectMobile ? true : show) ? (<IconButton  onMouseEnter={() => showIcon(true)} onMouseLeave={() => showIcon(false)}  color='primary' aria-label="Delete Todo" onClick={props.onButtonClick} >
           <Delete/>
         </IconButton>) : ''
       }    
