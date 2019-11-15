@@ -10,8 +10,6 @@ This todo app allows user to add new todo, remove todo, mark completed todo, vie
 
 Demo - https://app-todo-list-items.herokuapp.com/
  
-<a href="https://www.loom.com/share/b41d324d6530444ebd527d35654acc41"> <p>Todo App - Watch Video</p> <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/b41d324d6530444ebd527d35654acc41-with-play.gif"> </a>
-
 <img src="https://i.ibb.co/Wc0nTXR/desktop-todo.jpg"/>
 <img src="https://i.ibb.co/m8jwghW/desktop.jpg"/>
 <img src="https://i.ibb.co/1qg5CNZ/mobile-ui.jpg"/>
