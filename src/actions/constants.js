@@ -1,5 +1,5 @@
   
-export const constants = {
+export const Constants = {
     DELETE : "DELETE",
     COMPLETE: "COMPLETE",
     ADD_TODO: "ADD_TODO",

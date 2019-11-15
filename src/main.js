@@ -5,7 +5,7 @@ import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/es/styles';
 import Store from '../src/store/context' 
-import {constants} from './actions/constants'
+import {Constants} from './actions/constants'
 import Notification from '../src/components/Notification'; 
 
 const onTodoClick = (initialValue = false) => {
@@ -32,15 +32,15 @@ const TodoApp = memo(() => {
   }
   const removeTodo = (idx) => {
     notifyMessage({"type": Constants.SUCCESS, "msg": Constants.TODO_REMOVED_MESSAGE}) 
-    dispatch({ type: constants.DELETE, payload: idx });
+    dispatch({ type: Constants.DELETE, payload: idx });
   }
   const selectTodo = (idx) => {
     notifyMessage({"type": Constants.INFO, "msg": Constants.TODO_MARK_MESSAGE}) 
-    dispatch({ type: constants.COMPLETE, payload: idx });
+    dispatch({ type: Constants.COMPLETE, payload: idx });
   }
   const handleTodoAdd = () => {
     if(todo != "") {
-      dispatch({ type: constants.ADD_TODO, payload: todo });
+      dispatch({ type: Constants.ADD_TODO, payload: todo });
       setTodo("");
       openTodo(false);
       notifyMessage({"type": Constants.SUCCESS, "msg": Constants.TODO_SUCCESS_MESSAGE})
@@ -50,8 +50,8 @@ const TodoApp = memo(() => {
     } 
   }
   
-  const user =  {name: constants.USER_NAME, todo: constants.TODO_TXT}
-  const banner =  {title: constants.BANNER_TITLE, subTitle: constants.BANNER_SUB_TITLE}
+  const user =  {name: Constants.USER_NAME, todo: Constants.TODO_TXT}
+  const banner =  {title: Constants.BANNER_TITLE, subTitle: Constants.BANNER_SUB_TITLE}
   
   const handleToAddKeyPress = (event) => {
     if (event.which === 13 || event.keyCode === 13) {
