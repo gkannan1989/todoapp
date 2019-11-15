@@ -1,14 +1,10 @@
 html,
 body { 
   font-family: 'Darwin-Light !important'; 
-  margin: 0px 0.8px 0px; 
+  margin: 0px; 
+  padding: 0px;
   height: 100%;
-}  
-@media only screen and (max-width: 600px) {
-  body {
-    margin: 0px
-  }
-}
+}   
 #root {
   height: 100%;
 }
@@ -114,3 +110,16 @@ body {
 .wrapper {
   height: 97%;
 }
+li.MuiGridListTile-root {
+  padding:0px !important
+}
+ul.MuiGridList-root {
+  margin:0px !important
+}
+.MuiButton-outlinedSecondary {
+  color: #3f51b5 !important;
+  border: 1px solid #3f51b5 !important;
+}
+.MuiButton-outlinedSecondary:hover {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+} 
