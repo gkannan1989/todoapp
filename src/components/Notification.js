@@ -93,7 +93,7 @@ export default function CustomizedSnackbars(data) {
           horizontal: 'right',
         }}
         open={true}
-        autoHideDuration={3000} 
+        autoHideDuration={1500} 
         onClose={() => data.onClose()}
       >
         <MySnackbarContentWrapper
