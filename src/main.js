@@ -5,7 +5,7 @@ import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/es/styles';
 import Store from '../src/store/context' 
-import {Constants} from './actions/constants'
+import {Constants} from './constants/constants'
 import Notification from '../src/components/Notification'; 
 
 const onTodoClick = (initialValue = false) => {
