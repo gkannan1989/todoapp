@@ -7,6 +7,7 @@ import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/es/styles';
 import Store from '../src/store/context' 
 import {Constants} from './constants/constants'
 import Notification from '../src/components/Notification'; 
+import TodoHelper from './utils'; 
  
 const onTodoClick = (initialValue = false) => {
   const [isOpen, triggerOpen] = useState(initialValue); 
@@ -18,7 +19,7 @@ const onTodoClick = (initialValue = false) => {
 
 const theme = createMuiTheme({
   typography: {
-   "fontFamily": "Darwin-Bold" 
+   "fontFamily": Constants.DEFAULT_THEME_FONT 
   }
 }); 
 
@@ -44,7 +45,7 @@ const TodoApp = memo(() => {
   }
 
   const handleTodoAdd = () => {
-    if(todo !== "") {
+    if(TodoHelper.validateInput(todo)) {
       dispatch({ type: Constants.ADD_TODO, payload: todo });
       setTodo("");
       openTodo(false);
@@ -59,11 +60,11 @@ const TodoApp = memo(() => {
   const banner =  {title: Constants.BANNER_TITLE, subTitle: Constants.BANNER_SUB_TITLE}
   
   const handleToAddKeyPress = (event) => {
-    if (event.which === 13 || event.keyCode === 13) {
-      handleTodoAdd()
-      return true;
+    if(TodoHelper.handleKeyPressEvent(event)) {
+      handleTodoAdd();
+    } else {
+      return false
     }
-    return false;
   }
    
   return (

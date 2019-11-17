@@ -14,5 +14,6 @@ export const Constants = {
     SUCCESS: "success",
     ERROR: "error",
     INFO: "info",
-    WARNING: "warning"
+    WARNING: "warning",
+    DEFAULT_THEME_FONT: "Darwin-Bold"
 }
