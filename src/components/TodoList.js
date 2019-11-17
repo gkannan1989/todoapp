@@ -1,16 +1,15 @@
 import React, { memo } from "react";
+import PropTypes from 'prop-types';
 import { List, Paper } from "@material-ui/core";
 import TodoListItem from "./TodoListItem";
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import image from '../assets/img/todo-background.png';
 
 const TodoList = memo(props => (
   <>
    <GridList cellHeight={180} >
          <GridListTile cols={2} rows={1}>
-            <img src={image} alt={props.banner && props.banner.title} />
             <GridListTileBar
               title={props.banner && props.banner.title}
               subtitle={props.banner && props.banner.subTitle}
@@ -37,5 +36,12 @@ const TodoList = memo(props => (
     )}
   </>
 ));
+
+TodoList.propTypes = { 
+  items: PropTypes.array.isRequired,
+  onItemCheck: PropTypes.func.isRequired,
+  onItemRemove: PropTypes.func.isRequired,
+  banner:  PropTypes.object.isRequired
+};
 
 export default TodoList;

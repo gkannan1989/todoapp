@@ -1,5 +1,5 @@
 import "./css/styles.css";
-import React, { memo, useContext, useState } from "react"; 
+import React, { memo, useContext, useState } from "react";  
 import Layout from "./components/Layout";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
@@ -7,7 +7,7 @@ import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/es/styles';
 import Store from '../src/store/context' 
 import {Constants} from './constants/constants'
 import Notification from '../src/components/Notification'; 
-
+ 
 const onTodoClick = (initialValue = false) => {
   const [isOpen, triggerOpen] = useState(initialValue); 
   return {
@@ -16,30 +16,35 @@ const onTodoClick = (initialValue = false) => {
   };
 };
 
+const theme = createMuiTheme({
+  typography: {
+   "fontFamily": "Darwin-Bold" 
+  }
+}); 
+
 const TodoApp = memo(() => {
   const { state, dispatch } = useContext(Store); 
   const { isOpen, openTodo } = onTodoClick();  
-  const theme = createMuiTheme({
-    typography: {
-     "fontFamily": "Darwin-Bold" 
-    }
-  }); 
+
   const [todo, setTodo] = useState("");
   const [message, notifyMessage] = useState("");
 
   const handleTodoChange = (e) => {
     setTodo(e.target.value);
   }
-  const removeTodo = (idx) => {
-    notifyMessage({"type": Constants.SUCCESS, "msg": Constants.TODO_REMOVED_MESSAGE}) 
+
+  const removeTodo = (idx) => { 
     dispatch({ type: Constants.DELETE, payload: idx });
+    notifyMessage({"type": Constants.WARNING, "msg": Constants.TODO_REMOVED_MESSAGE}) 
   }
-  const selectTodo = (idx) => {
-    notifyMessage({"type": Constants.INFO, "msg": Constants.TODO_MARK_MESSAGE}) 
+
+  const selectTodo = (idx) => {  
     dispatch({ type: Constants.COMPLETE, payload: idx });
+    notifyMessage({"type": Constants.INFO, "msg": Constants.TODO_MARK_MESSAGE}) 
   }
+
   const handleTodoAdd = () => {
-    if(todo != "") {
+    if(todo !== "") {
       dispatch({ type: Constants.ADD_TODO, payload: todo });
       setTodo("");
       openTodo(false);
@@ -47,9 +52,9 @@ const TodoApp = memo(() => {
     }
     else {
       notifyMessage({"type": Constants.ERROR, "msg": Constants.ERROR_MESSAGE})
-    } 
+    }  
   }
-  
+
   const user =  {name: Constants.USER_NAME, todo: Constants.TODO_TXT}
   const banner =  {title: Constants.BANNER_TITLE, subTitle: Constants.BANNER_SUB_TITLE}
   
@@ -92,7 +97,8 @@ const TodoApp = memo(() => {
      </MuiThemeProvider>
   </div>
   );
-});
+}); 
+
 
 export default TodoApp;
  

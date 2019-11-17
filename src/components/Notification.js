@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
+import clsx from 'clsx'; 
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ErrorIcon from '@material-ui/icons/Error';
 import InfoIcon from '@material-ui/icons/Info';
@@ -84,16 +84,16 @@ const useStyles2 = makeStyles(theme => ({
 }));
 
 export default function CustomizedSnackbars(data) {
-  const classes = useStyles2();
+  const classes = useStyles2();  
   return (
-    <div>
-      <Snackbar
+    <div>  
+       <Snackbar
         anchorOrigin={{
           vertical: 'bottom',
           horizontal: 'right',
         }}
         open={true}
-        autoHideDuration={1500} 
+        autoHideDuration={1800} 
         onClose={() => data.onClose()}
       >
         <MySnackbarContentWrapper

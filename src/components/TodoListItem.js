@@ -5,6 +5,7 @@ import {
   IconButton,
   ListItemText 
 } from "@material-ui/core";
+import PropTypes from 'prop-types';
 import { Delete } from '@material-ui/icons' 
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { withStyles } from '@material-ui/core/styles';
@@ -19,8 +20,8 @@ const GreenCheckbox = withStyles({
     },
   },
   checked: {},
-})(props => <Checkbox color="default" {...props} />);  
- 
+})(props => <Checkbox color="default" {...props} />); 
+
 const TodoListItem = memo((props) => {
   const [show, showIcon] = useState(false); 
   return (
@@ -43,5 +44,11 @@ const TodoListItem = memo((props) => {
     </ListItem>
   ) 
 });
+
+TodoListItem.propTypes = {  
+  divider: PropTypes.bool.isRequired,
+  onButtonClick: PropTypes.func.isRequired,
+  onCheckBoxToggle:  PropTypes.func.isRequired
+};
 
 export default TodoListItem;

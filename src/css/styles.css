@@ -73,10 +73,19 @@ body {
   margin-left: 1em !important; 
 }
 .addToDo {
-  margin-top: 1em !important;
+  margin: 16px;
+  margin-top: 1em !important; 
+  padding: 16px; 
+}
+.addToDo > div.MuiGrid-container > div.MuiGrid-item {
+  background-color:#ffff
+}
+.grid {
+  padding-right:  16px !important;
 }
 .MuiGridListTile-imgFullWidth {
   background-repeat: repeat;
+  background-size: cover
 } 
 .listItem {
   min-height: 3.7em;
@@ -126,9 +135,21 @@ ul.MuiGridList-root {
 .MuiSnackbarContent-action { 
   padding-left: 0px !important;
   width: 41px !important;
-} 
+}
 @media only screen and (min-width: 600px) {
   .MuiGrid-container {
       height: 100%;
   }
+}
+.paperRightSide{
+  padding: 0px;
+  margin : 0px; 
+  background-color: #fafafa;
+}
+.MuiGrid-item {
+  background-color: rgba(0, 0, 0, 0.03)
+}
+.MuiGridListTile-tile {
+  background-image: url("../assets/img/todo-background.png");
+  background-size: cover;
 }
