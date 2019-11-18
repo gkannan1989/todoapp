@@ -83,7 +83,7 @@ const useStyles2 = makeStyles(theme => ({
   },
 }));
 
-export default function CustomizedSnackbars(data) {
+export default function CustomizedSnackbars(ev) {
   const classes = useStyles2();  
   return (
     <div>  
@@ -94,13 +94,13 @@ export default function CustomizedSnackbars(data) {
         }}
         open={true}
         autoHideDuration={1800} 
-        onClose={() => data.onClose()}
+        onClose={() => ev.onClose()}
       >
         <MySnackbarContentWrapper
-          variant={data.variant}
+          variant={ev.variant}
           className={classes.margin}
-          message={data.message}
-          onClose={() => data.onClose()} 
+          message={ev.message}
+          onClose={() => ev.onClose()} 
         />
       </Snackbar>
     </div>

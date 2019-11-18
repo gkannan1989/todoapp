@@ -37,20 +37,6 @@ test("<Layout /> - check dynamic children is rendering properly", async () => {
       todo: 'Todo'
     }
   }
-  const originalConsoleError = console.error;
-  beforeEach(() => {
-    console.error = jest.fn((msg) => {
-      if (msg.includes('Warning: useLayoutEffect does nothing on the server')) {
-        return null;
-      } else {
-        originalConsoleError(msg);
-      }
-    });
-  });
-
-  afterEach(() => {
-    console.error = originalConsoleError;
-  }); 
   const wrapper = shallow(<Layout {...props}/>);  
   expect( wrapper.find('WithStyles(ForwardRef(Grid))').last().html()).toContain('hello')
 });

@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import { Constants as C } from  '../constants/constants'
 
 const AddTodo = memo(props => (
   <> 
@@ -13,13 +14,13 @@ const AddTodo = memo(props => (
         <Fab size="small"  color="primary" aria-label="add" onClick={props.openTodo}>
           <AddIcon />   
         </Fab>
-        <Button color="primary" onClick={props.openTodo}>Add a to-do</Button> 
+        <Button color="primary" onClick={props.openTodo}>{C.ADD_TODO_BTN}</Button> 
       </Typography> : 
          ( <Paper className="addToDo"> 
             <Grid container> 
               <Grid  className="grid" xs={10} md={11} item>
                 <TextField
-                  placeholder="Add Todo here"
+                  placeholder={C.TODO_PLACEHOLDER}
                   value={props.inputValue}
                   onChange={props.onInputChange}
                   onKeyPress={props.onInputKeyPress}
@@ -34,7 +35,7 @@ const AddTodo = memo(props => (
                   variant="outlined"
                   onClick={props.onButtonClick}
                 >
-                  Add
+                  {C.ADD_BTN_TEXT}
                 </Button>
               </Grid>
           </Grid></Paper> ) 

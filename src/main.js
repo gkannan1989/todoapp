@@ -1,13 +1,13 @@
 import "./css/styles.css";
-import React, { memo, useContext, useState } from "react";  
-import Layout from "./components/Layout";
-import AddTodo from "./components/AddTodo";
-import TodoList from "./components/TodoList";
+import React, { memo, useContext, useState, Suspense, lazy } from "react";   
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/es/styles';
 import Store from '../src/store/context' 
-import {Constants} from './constants/constants'
-import Notification from '../src/components/Notification'; 
-import TodoHelper from './utils'; 
+import { Constants as C } from './constants/constants' 
+import { TodoHelper as H } from './util/utils'; 
+import Layout from './components/Layout';
+import AddTodo from './components/AddTodo';
+import TodoList from './components/TodoList'; 
+const Notification = lazy(() => import('../src/components/Notification'));   
  
 const onTodoClick = (initialValue = false) => {
   const [isOpen, triggerOpen] = useState(initialValue); 
@@ -17,50 +17,46 @@ const onTodoClick = (initialValue = false) => {
   };
 };
 
-const theme = createMuiTheme({
+const customTheme = createMuiTheme({
   typography: {
-   "fontFamily": Constants.DEFAULT_THEME_FONT 
+   "fontFamily": C.DEFAULT_THEME_FONT 
   }
 }); 
 
 const TodoApp = memo(() => {
   const { state, dispatch } = useContext(Store); 
+  const [ todo, setTodo ] = useState("");
+  const [ message, notify ] = useState("");
   const { isOpen, openTodo } = onTodoClick();  
 
-  const [todo, setTodo] = useState("");
-  const [message, notifyMessage] = useState("");
-
   const handleTodoChange = (e) => {
-    setTodo(e.target.value);
+    setTodo(e && e.target && e.target.value);
   }
 
   const removeTodo = (idx) => { 
-    dispatch({ type: Constants.DELETE, payload: idx });
-    notifyMessage({"type": Constants.WARNING, "msg": Constants.TODO_REMOVED_MESSAGE}) 
+    dispatch({ type: C.DELETE, payload: idx });
+    notify({"type": C.WARNING, "msg": C.TODO_REMOVED_MESSAGE}) 
   }
 
-  const selectTodo = (idx) => {  
-    dispatch({ type: Constants.COMPLETE, payload: idx });
-    notifyMessage({"type": Constants.INFO, "msg": Constants.TODO_MARK_MESSAGE}) 
+  const markTodo = (idx) => {  
+    dispatch({ type: C.COMPLETE, payload: idx });
+    notify({"type": C.INFO, "msg": C.TODO_MARK_MESSAGE}) 
   }
 
   const handleTodoAdd = () => {
-    if(TodoHelper.validateInput(todo)) {
-      dispatch({ type: Constants.ADD_TODO, payload: todo });
+    if(H.handleInput(todo)) {
+      dispatch({ type: C.ADD_TODO, payload: todo });
       setTodo("");
       openTodo(false);
-      notifyMessage({"type": Constants.SUCCESS, "msg": Constants.TODO_SUCCESS_MESSAGE})
+      notify({"type": C.SUCCESS, "msg": C.TODO_SUCCESS_MESSAGE})
     }
     else {
-      notifyMessage({"type": Constants.ERROR, "msg": Constants.ERROR_MESSAGE})
+      notify({"type": C.ERROR, "msg": C.ERROR_MESSAGE})
     }  
   }
 
-  const user =  {name: Constants.USER_NAME, todo: Constants.TODO_TXT}
-  const banner =  {title: Constants.BANNER_TITLE, subTitle: Constants.BANNER_SUB_TITLE}
-  
-  const handleToAddKeyPress = (event) => {
-    if(TodoHelper.handleKeyPressEvent(event)) {
+  const handleKeyPressEvent = (ev) => {
+    if(H.handleKeyPress(ev)) {
       handleTodoAdd();
     } else {
       return false
@@ -69,31 +65,34 @@ const TodoApp = memo(() => {
    
   return (
   <div className={'wrapper'}>
-   <MuiThemeProvider theme={theme}>
-    <Layout user={user}> 
-      <TodoList
-        items={state && state.todos}
-        onItemCheck={idx => selectTodo(idx)}
-        onItemRemove={idx => removeTodo(idx)} 
-        banner={banner}
-      />
-      <AddTodo
-        inputValue={todo}
-        onInputChange={handleTodoChange}
-        onButtonClick={handleTodoAdd}
-        openTodo={() => openTodo()}
-        isOpen={isOpen}
-        onInputKeyPress={event => handleToAddKeyPress(event)}
-      /> 
-      {message ? 
-        <Notification
-          variant={message && message.type} 
-          onClose={() => notifyMessage("")}
-          message={message.msg}
-        /> : 
-        ''
-      }
-      
+      <MuiThemeProvider theme={customTheme}> 
+        <Layout user={C.USER_OBJ}> 
+          <TodoList
+              items={state && state.todos}
+              onItemCheck={idx => markTodo(idx)}
+              onItemRemove={idx => removeTodo(idx)} 
+              banner={C.BANNER_OBJ}
+          />
+          <AddTodo
+            inputValue={todo}
+            onInputChange={handleTodoChange}
+            onButtonClick={handleTodoAdd}
+            openTodo={() => openTodo()}
+            isOpen={isOpen}
+            onInputKeyPress={ev => handleKeyPressEvent(ev)}
+          /> 
+          {message ? 
+            <Suspense fallback={<div>loading</div>}>
+                <Notification
+                  variant={message && message.type} 
+                  onClose={() => notify("")}
+                  message={message.msg}
+              />
+              </Suspense>
+            : 
+            ''
+          }
+          
      </Layout>
      </MuiThemeProvider>
   </div>

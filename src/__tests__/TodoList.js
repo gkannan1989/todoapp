@@ -16,7 +16,10 @@ test("<TodoList /> - snapshot of TodoList component", async () => {
         checked: false,
         text: "Launch PPC campaign with new creative"
       }
-    ]
+    ],
+    onItemCheck: jest.fn(),
+    onItemRemove: jest.fn(),
+    banner: {}
   }
   const wrapper = shallow(<TodoList {...props} />);  
   expect(wrapper).toMatchSnapshot();
@@ -35,6 +38,8 @@ test("<TodoList /> - check TodoList layout rendering properly", async () => {
       } 
       
     ],
+    onItemCheck: jest.fn(),
+    onItemRemove: jest.fn(), 
     banner: {title: 'Team To-Do List', subTitle: 'Tue 12 December'}
   }
   const wrapper = shallow(<TodoList {...props}/>);  
@@ -52,6 +57,8 @@ test("<TodoList /> - check TodoList banner rendering properly", async () => {
         text: "Launch PPC campaign with new creative"
       }
     ],
+    onItemCheck: jest.fn(),
+    onItemRemove: jest.fn(), 
     banner: {title: 'Team To-Do List', subTitle: 'Tue 12 December'}
   }
   const wrapper = shallow(<TodoList {...props}/>);  

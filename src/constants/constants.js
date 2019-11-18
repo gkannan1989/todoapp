@@ -3,10 +3,9 @@ export const Constants = {
     DELETE : "DELETE",
     COMPLETE: "COMPLETE",
     ADD_TODO: "ADD_TODO",
-    USER_NAME: "Guglielmo Marconi",
-    TODO_TXT: "Team To-Do List",
-    BANNER_TITLE: "Team To-Do List",
-    BANNER_SUB_TITLE: "Tue 12 December",
+    ADD_TODO_BTN: "Add a to-do",
+    TODO_PLACEHOLDER: "Add Todo here",
+    ADD_BTN_TEXT: "Add",
     ERROR_MESSAGE: "It seems you have not entered Todo!",
     TODO_SUCCESS_MESSAGE: "Successfully added to your List!",
     TODO_MARK_MESSAGE: "Successfully completed your request!",
@@ -15,5 +14,9 @@ export const Constants = {
     ERROR: "error",
     INFO: "info",
     WARNING: "warning",
-    DEFAULT_THEME_FONT: "Darwin-Bold"
-}
+    DEFAULT_THEME_FONT: "Darwin-Bold",
+    USER_OBJ: {name:"Guglielmo Marconi", todo: "Team To-Do List"},
+    BANNER_OBJ: {title: "Team To-Do List", subTitle: "Tue 12 December"}
+} 
+
+
