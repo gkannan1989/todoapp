@@ -1,7 +1,7 @@
 import React from "react";
 import Enzyme, { mount, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16"; 
-import TodoList from "../components/TodoList";
+import TodoList from "../components/TodoList"; 
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -17,7 +17,7 @@ test("<TodoList /> - snapshot of TodoList component", async () => {
         text: "Launch PPC campaign with new creative"
       }
     ],
-    onItemCheck: jest.fn(),
+    onItemMark: jest.fn(),
     onItemRemove: jest.fn(),
     banner: {}
   }
@@ -37,8 +37,8 @@ test("<TodoList /> - check TodoList layout rendering properly", async () => {
         text: "Launch PPC campaign with new creative"
       } 
       
-    ],
-    onItemCheck: jest.fn(),
+    ], 
+    onItemMark: jest.fn(),
     onItemRemove: jest.fn(), 
     banner: {title: 'Team To-Do List', subTitle: 'Tue 12 December'}
   }
@@ -56,8 +56,8 @@ test("<TodoList /> - check TodoList banner rendering properly", async () => {
         checked: false,
         text: "Launch PPC campaign with new creative"
       }
-    ],
-    onItemCheck: jest.fn(),
+    ], 
+    onItemMark: jest.fn(),
     onItemRemove: jest.fn(), 
     banner: {title: 'Team To-Do List', subTitle: 'Tue 12 December'}
   }

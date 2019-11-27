@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import Store from "./store/context";
 import reducer from "./store/reducer";
 import { usePersistedContext, usePersistedReducer } from "./store/usePersist";
-import Todo from "./main";
+import Todo from "./pages/todo";
+import "./pages/todo.css";
 
 function App() {
   // create a global store to store the state

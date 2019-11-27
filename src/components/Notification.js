@@ -44,7 +44,21 @@ const useStyles1 = makeStyles(theme => ({
     alignItems: 'center',
   },
 }));
-
+/**
+ * Function represents the MySnackbarContentWrapper component
+ * @memberOf components.MySnackbarContentWrapper
+ * @function MySnackbarContentWrapper
+ * @description It render SnackbarContent along with customized string 
+ * @param {object}   props     - props of component that were given by parent
+ * @return {jsx} - jsx component to show 
+ * @example
+ * <MySnackbarContentWrapper
+    variant={props.variant}
+    className={classes.margin}
+    message={props.message}
+    onClose={() => props.onClose()} 
+    />
+ */
 function MySnackbarContentWrapper(props) {
   const classes = useStyles1();
   const { className, message, onClose, variant, ...other } = props;
@@ -69,7 +83,16 @@ function MySnackbarContentWrapper(props) {
     />
   );
 }
-
+/**
+ * @memberOf components.MySnackbarContentWrapper
+ * @name propTypes
+ * @type {object}
+ * @description defines prop types of MySnackbarContentWrapper
+ * @property {string}         [className]   -  style to apply for the snakbar wrapper
+ * @property {string}         [message]   -  message to be appeared on the snakbar
+ * @property {func}         [onClose]   -  function which gets invoked when tapping close on snakbar
+ * @property {string}         [variant]   -  snakbar variant behavior(success, warning.. etc) 
+ */
 MySnackbarContentWrapper.propTypes = {
   className: PropTypes.string,
   message: PropTypes.string,
@@ -82,8 +105,21 @@ const useStyles2 = makeStyles(theme => ({
     margin: theme.spacing(1),
   },
 }));
-
-export default function CustomizedSnackbars(ev) {
+/**
+ * Function represents the Notification component
+ * @memberOf components.Notification
+ * @function Notification
+ * @description It render Notification 
+ * @param {object}   props     - props of component that were given by parent
+ * @return {jsx} - jsx component to show 
+ * @example
+ *  <Notification
+      variant={message.type} 
+      onClose={notify()}
+      message={message}
+      />
+ */
+export default function Notification(props) {
   const classes = useStyles2();  
   return (
     <div>  
@@ -94,13 +130,13 @@ export default function CustomizedSnackbars(ev) {
         }}
         open={true}
         autoHideDuration={1800} 
-        onClose={() => ev.onClose()}
+        onClose={() => props.onClose()}
       >
         <MySnackbarContentWrapper
-          variant={ev.variant}
+          variant={props.variant}
           className={classes.margin}
-          message={ev.message}
-          onClose={() => ev.onClose()} 
+          message={props.message}
+          onClose={() => props.onClose()} 
         />
       </Snackbar>
     </div>

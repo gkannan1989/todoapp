@@ -4,8 +4,25 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import { Constants as C } from  '../constants/constants'
-
+import { Constants as C } from  '../constants/constants';
+/**
+ * Function represents the AddTodo component
+ * @memberOf components.AddTodo
+ * @function AddTodo
+ * @description It render the add to do with plus icon,
+ * when tapping text block with addtodo button will appear
+ * @param {object}   props     - props of component that were given by parent
+ * @return {jsx} - jsx component to show 
+ * @example
+ * <AddTodo
+    inputValue={todo}
+    onInputChange={handleTodoChange}
+    onButtonClick={handleTodoAdd}
+    openTodo={() => openTodo()}
+    isOpen={isOpen}
+    onInputKeyPress={ev => handleKeyPressEvent(ev)}
+    />
+ */
 const AddTodo = memo(props => (
   <> 
   {
@@ -43,6 +60,18 @@ const AddTodo = memo(props => (
   </>
 ));
 
+/**
+ * @memberOf components.AddTodo
+ * @name propTypes
+ * @type {object}
+ * @description defines prop types of AddTodo
+ * @property {string}         [inputValue]          -  input string on the addtodo input box
+ * @property {function}         [onInputChange]      -  function to handle during inputchange
+ * @property {function}        [onButtonClick]     -  function to handle on clicking addtodo button
+ * @property {function}         [openTodo]          -  function to handle on todo plus button
+ * @property {boolean}         [isOpen]      -  boolean to determine whether to open todo input box or not
+ * @property {function}        [onInputKeyPress]     - function to handle on keyboard enter
+ */
 AddTodo.propTypes = {
   inputValue: PropTypes.string.isRequired,
   onInputChange: PropTypes.func.isRequired,

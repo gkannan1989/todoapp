@@ -1,7 +1,7 @@
 html,
 body { 
   font-family: 'Darwin-Light !important'; 
-  margin: 0px; 
+  margin: 0px ; 
   height: 100%;
   padding: 0px;
 }   
@@ -23,7 +23,11 @@ body {
   url("../assets/fonts/woff/Darwin-Light.woff") format("woff"), /* chrome firefox */
   url("../assets/fonts/ttf/Darwin-Light.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
   url("../assets/fonts/svg/Darwin-Light.svg#Darwin-Light") format("svg"); /* iOS 4.1- */
-} 
+}  
+@font-face {font-family: "Fira-Sans-ExtraLight";
+  src: url("../assets/fonts/ttf/fira-sans.extralight.ttf"); 
+}  
+
 .strikeThrough {
   text-decoration: line-through;
   color: #999;
@@ -33,15 +37,16 @@ body {
 } 
 .MuiFab-root {
   height: .5em !important;
-    width: 2.5em !important;
+  width: 2.5em !important;
 }
 .MuiGridListTileBar-rootSubtitle {
   height: 100% !important;
   background: transparent !important;
 }
 .MuiGridListTileBar-title {
-  font-size: 2em !important;
+  font-size: 2.4em !important;
   line-height: 2 !important;
+  font-family: 'Fira-Sans-ExtraLight'; 
 }
 .MuiGridListTileBar-subtitle {
   font-size: 1rem !important;
@@ -65,8 +70,8 @@ body {
 .MuiPaper-elevation1 {
   margin:0px !important;
 }
-.MuiTypography-body1{
-  font-size: 1.1em;
+.MuiTypography-body1{ 
+  font-size: 1.1em !important; 
 } 
 .addToDoBtn {
   line-height: 4em !important;
@@ -129,27 +134,58 @@ ul.MuiGridList-root {
   color: #3f51b5 !important;
   border: 1px solid #3f51b5 !important;
 }
+
 .MuiButton-outlinedSecondary:hover {
   background-color: rgba(0, 0, 0, 0.08) !important;
 } 
 .MuiSnackbarContent-action { 
   padding-left: 0px !important;
   width: 41px !important;
-}
-@media only screen and (min-width: 600px) {
-  .MuiGrid-container {
-      height: 100%;
-  }
-}
+}  
+
 .paperRightSide{
   padding: 0px;
   margin : 0px; 
   background-color: #fafafa;
 }
 .MuiGrid-item {
-  background-color: rgba(0, 0, 0, 0.03)
+  background-color: #f3f3f3
 }
 .MuiGridListTile-tile {
   background-image: url("../assets/img/todo-background.png");
   background-size: cover;
+} 
+.MuiIconButton-colorPrimary {
+  color: #0b29d2f7 !important;
+}
+.MuiPaper-elevation1 {
+  box-shadow: 0 0 !important
+}
+.userBlock {
+  box-shadow: 4px 1px 4px 0px rgba(0, 0, 0, 0.03) !important;
+  z-index: 1  !important
+}
+.checkboxOutline path {
+  visibility: hidden; 
+} 
+.MuiListItem-gutters {
+  padding-left: 1.8em !important;
+  padding-right: 1em !important;
+}
+.MuiGrid-container {
+  height: auto;
+}
+@media only screen and (min-width: 600px) {
+  .MuiGrid-container {
+      height: 100%;
+  } 
+}
+@media only screen and (max-width: 600px) { 
+  .rightSideBar {
+    min-height: auto;
+  }
+  .MuiListItem-gutters {
+    padding-left: 1.4em !important;
+    padding-right: 1em !important;
+  }
 }

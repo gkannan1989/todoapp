@@ -1,14 +1,13 @@
 export default function reducer(state, action) {
   switch (action.type) {
-    case "ADD_TODO":
-      // return current state if empty
+    case "ADD_TODO": 
       if (!action.payload) {
         return state;
       } 
       let text = action.payload;  
       return {
         ...state,
-        todos: [...state.todos, {text, checked:false}]
+        todos: [...state.todos, {text, checked: false}]
       };
     case "COMPLETE": 
       return {
