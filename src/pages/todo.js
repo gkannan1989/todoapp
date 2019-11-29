@@ -3,10 +3,10 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/es/styles';
 import Store from '../store/context' 
 import { Constants as C } from '../constants/constants' 
 import { TodoHelper as H } from '../util/utils'; 
-import Layout from '../components/Layout';
-import AddTodo from '../components/AddTodo';
-import TodoList from '../components/TodoList'; 
-const Notification = lazy(() => import('../components/Notification'));   
+import Layout from '../components/organisms/Layout';
+import AddTodo from '../components/molecules/AddTodo';
+import TodoList from '../components/molecules/TodoList'; 
+const Notification = lazy(() => import('../components/molecules/Notification'));   
 
 const onTodoClick = (initialValue = false) => {
   const [isOpen, triggerOpen] = useState(initialValue); 

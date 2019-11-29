@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import { Constants as C } from  '../constants/constants';
+import { Constants as C } from  '../../constants/constants';
 /**
  * Function represents the AddTodo component
  * @memberOf components.AddTodo

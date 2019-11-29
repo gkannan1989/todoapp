@@ -8,7 +8,7 @@ export const Constants = {
     ADD_BTN_TEXT: "Add",
     ERROR_MESSAGE: "It seems you have not entered Todo!",
     TODO_SUCCESS_MESSAGE: "Successfully added to your List!",
-    TODO_MARK_MESSAGE: "Completed!",
+    TODO_MARK_MESSAGE: "Completed the request!",
     TODO_REMOVED_MESSAGE: "Successfully Removed!",
     SUCCESS: "success",
     ERROR: "error",

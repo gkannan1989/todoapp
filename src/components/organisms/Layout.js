@@ -1,8 +1,8 @@
 import React, { memo } from "react";
 import { Button, Paper, Grid, Typography } from "@material-ui/core"; 
 import PropTypes from 'prop-types';
-import userImg from '../assets/img/userimage.png';
-import listIcon from '../assets/img/list-ico.png';
+import userImg from '../../assets/img/userimage.png';
+import listIcon from '../../assets/img/list-ico.png';
 /**
  * Function represents the Layout component
  * @memberOf components.Layout

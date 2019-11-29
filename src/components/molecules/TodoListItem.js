@@ -11,7 +11,7 @@ import { withStyles } from '@material-ui/core/styles';
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import { Constants as C } from '../constants/constants'
+import { Constants as C } from '../../constants/constants'
 /**
  * 
  */
