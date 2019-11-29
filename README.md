@@ -13,9 +13,10 @@ This todo app allows user to add new todo, remove todo, mark completed todo, vie
 https://app-todo-list-items.herokuapp.com/
 
 ## Install
+````
 Step 1: npm install
 Step 2: npm run start
-
+````
 ## Testing
 Step 1: npm run test
 
